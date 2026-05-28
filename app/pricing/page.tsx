@@ -132,7 +132,7 @@ export default function PricingPage() {
       {/* Nav */}
       <nav className="border-b border-gray-100 px-6 py-4 flex items-center justify-between max-w-6xl mx-auto">
         <Link href="/" className="flex items-center gap-2 text-lg font-bold text-gray-900">
-          <span>🏃</span> Repliq
+          <img src="/logo.svg" alt="Repliq" className="h-7" />
         </Link>
         <div className="flex items-center gap-6">
           <Link href="/" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">Home</Link>
