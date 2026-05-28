@@ -8,7 +8,7 @@ const PLANS = [
     name: "Gara Singola",
     price: "€29",
     period: "/evento",
-    desc: "Ideale per provare RaceBot su una singola gara o evento.",
+    desc: "Ideale per provare Repliq su una singola gara o evento.",
     color: "#64748b",
     badge: null,
     highlight: false,
@@ -115,7 +115,7 @@ const FAQS = [
   },
   {
     q: "C'è un periodo di prova gratuito?",
-    a: "Sì, puoi testare RaceBot gratuitamente per 14 giorni con tutte le funzionalità Pro. Nessuna carta di credito richiesta.",
+    a: "Sì, puoi testare Repliq gratuitamente per 14 giorni con tutte le funzionalità Pro. Nessuna carta di credito richiesta.",
   },
   {
     q: "I dati dei miei partecipanti sono al sicuro?",
@@ -132,11 +132,11 @@ export default function PricingPage() {
       {/* Nav */}
       <nav className="border-b border-gray-100 px-6 py-4 flex items-center justify-between max-w-6xl mx-auto">
         <Link href="/" className="flex items-center gap-2 text-lg font-bold text-gray-900">
-          <span>🏃</span> RaceBot
+          <span>🏃</span> Repliq
         </Link>
         <div className="flex items-center gap-6">
           <Link href="/" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">Home</Link>
-          <a href="mailto:info@racebot.ai" className="text-sm bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+          <a href="http://app.repliq.it/register" className="text-sm bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
             Inizia gratis
           </a>
         </div>
@@ -191,7 +191,7 @@ export default function PricingPage() {
               </div>
 
               <a
-                href="mailto:info@racebot.ai"
+                href="http://app.repliq.it/register"
                 className="block text-center text-sm font-bold py-2.5 rounded-xl mb-6 transition-colors"
                 style={
                   plan.highlight
@@ -304,7 +304,7 @@ export default function PricingPage() {
           <h2 className="text-2xl font-extrabold text-white mb-3">Pronto a iniziare?</h2>
           <p className="text-blue-100 mb-6">14 giorni gratis, nessuna carta di credito richiesta.</p>
           <a
-            href="mailto:info@racebot.ai"
+            href="http://app.repliq.it/register"
             className="inline-block bg-white text-blue-700 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-colors"
           >
             Inizia la prova gratuita →
@@ -314,8 +314,8 @@ export default function PricingPage() {
 
       {/* Footer */}
       <footer className="border-t border-gray-100 py-8 text-center text-sm text-gray-400">
-        © 2025 RaceBot · <Link href="/" className="hover:text-gray-600">Home</Link> ·{" "}
-        <a href="mailto:info@racebot.ai" className="hover:text-gray-600">info@racebot.ai</a>
+        © 2025 Repliq · <Link href="/" className="hover:text-gray-600">Home</Link> ·{" "}
+        <a href="http://app.repliq.it/register" className="hover:text-gray-600">info@racebot.ai</a>
       </footer>
     </div>
   );

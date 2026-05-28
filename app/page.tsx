@@ -11,7 +11,7 @@ const CHAT_MESSAGES = [
 ];
 
 const STEPS = [
-  { icon: "📄", title: "Carica il regolamento", desc: "Carica il PDF della tua gara. RaceBot lo legge e lo memorizza automaticamente." },
+  { icon: "📄", title: "Carica il regolamento", desc: "Carica il PDF della tua gara. Repliq lo legge e lo memorizza automaticamente." },
   { icon: "🤖", title: "Il chatbot impara", desc: "L'intelligenza artificiale analizza ogni dettaglio: orari, percorso, logistica, regole." },
   { icon: "🔗", title: "Condividi il link", desc: "Ottieni un link diretto o un codice embed da aggiungere al tuo sito in 30 secondi." },
   { icon: "💬", title: "I partecipanti chiedono", desc: "Il chatbot risponde H24 in italiano. Le domande senza risposta diventano ticket per te." },
@@ -37,15 +37,15 @@ const FEATURES_PRO = [
 ];
 
 const PLANS = [
-  { name: "Gara Singola", price: "€19", period: "/evento", desc: "Perfetto per provare RaceBot su una singola gara.", color: "border-gray-200", badge: "" },
+  { name: "Gara Singola", price: "€19", period: "/evento", desc: "Perfetto per provare Repliq su una singola gara.", color: "border-gray-200", badge: "" },
   { name: "Stagione Base", price: "€79", period: "/anno", desc: "Gare illimitate per tutta la stagione sportiva.", color: "border-blue-500", badge: "Più scelto" },
   { name: "Stagione Pro", price: "€149", period: "/anno", desc: "Include ticketing e widget embed personalizzato.", color: "border-blue-700", badge: "Pro" },
   { name: "Federazione", price: "€299", period: "/anno", desc: "Multi-organizzazione, white label e supporto dedicato.", color: "border-gray-800", badge: "Enterprise" },
 ];
 
 const FAQS = [
-  { q: "Funziona anche per sport diversi dalla corsa?", a: "Sì — RaceBot funziona per qualsiasi evento sportivo: ciclismo, triathlon, nuoto, sci, equitazione e molto altro. Se hai un regolamento in PDF, RaceBot lo legge." },
-  { q: "Devo installare qualcosa?", a: "No. RaceBot è completamente online. Accedi dal browser, carichi il PDF e in pochi minuti il chatbot è attivo." },
+  { q: "Funziona anche per sport diversi dalla corsa?", a: "Sì — Repliq funziona per qualsiasi evento sportivo: ciclismo, triathlon, nuoto, sci, equitazione e molto altro. Se hai un regolamento in PDF, Repliq lo legge." },
+  { q: "Devo installare qualcosa?", a: "No. Repliq è completamente online. Accedi dal browser, carichi il PDF e in pochi minuti il chatbot è attivo." },
   { q: "Cosa succede se il chatbot non sa rispondere?", a: "Con il piano Pro, le domande senza risposta diventano automaticamente ticket. Ricevi una notifica email e puoi rispondere dal pannello. La risposta arriva al partecipante via email." },
   { q: "I dati dei miei partecipanti sono al sicuro?", a: "Sì. I dati sono conservati su server europei e non vengono condivisi con terze parti. Puoi richiedere la cancellazione in qualsiasi momento." },
   { q: "Posso personalizzare il chatbot con il logo della mia gara?", a: "Con il piano Pro e Federazione puoi personalizzare colori, logo e nome del chatbot." },
@@ -63,14 +63,14 @@ export default function LandingPage() {
       {/* NAV */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <span className="text-xl font-extrabold text-blue-600">🏃 RaceBot</span>
+          <span className="text-xl font-extrabold text-blue-600">⚡ Repliq</span>
           <div className="hidden md:flex items-center gap-8 text-sm text-gray-600">
             <a href="#come-funziona" className="hover:text-blue-600 transition">Come funziona</a>
             <a href="#funzionalita" className="hover:text-blue-600 transition">Funzionalità</a>
             <a href="/pricing" className="hover:text-blue-600 transition font-semibold">Prezzi</a>
             <a href="#faq" className="hover:text-blue-600 transition">FAQ</a>
           </div>
-          <a href="#prezzi" className="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 transition">
+          <a href="http://app.repliq.it/register" className="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 transition">
             Inizia gratis
           </a>
         </div>
@@ -81,17 +81,17 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div>
             <div className="inline-block bg-blue-50 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full mb-6">
-              🥇 Il primo assistente AI per eventi sportivi in Italia
+              ⚡ Il primo assistente AI per eventi sportivi in Italia
             </div>
             <h1 className="text-5xl font-extrabold leading-tight mb-6">
               Il tuo assistente personale<br />
               <span className="text-blue-600">che risponde al posto tuo</span>
             </h1>
             <p className="text-lg text-gray-500 mb-8 leading-relaxed">
-              RaceBot gestisce tutte le domande dei partecipanti H24 — dal regolamento alle info logistiche, fino alle richieste complesse con ticketing automatico. Tu organizzi la gara, lui pensa al resto.
+              Repliq gestisce tutte le domande dei partecipanti H24 — dal regolamento alle info logistiche, fino alle richieste complesse con ticketing automatico. Tu organizzi la gara, lui pensa al resto.
             </p>
             <div className="flex flex-wrap gap-4">
-              <a href="#prezzi" className="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-blue-700 transition shadow-lg shadow-blue-200">
+              <a href="http://app.repliq.it/register" className="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-blue-700 transition shadow-lg shadow-blue-200">
                 Prova gratis →
               </a>
               <a href="#come-funziona" className="border border-gray-200 text-gray-700 px-8 py-3 rounded-full font-semibold text-lg hover:border-blue-300 transition">
@@ -133,7 +133,7 @@ export default function LandingPage() {
             { number: "8+ ore", label: "perse per evento a rispondere messaggi" },
             { number: "80%", label: "delle domande sono sempre le stesse 10" },
             { number: "200+", label: "messaggi WhatsApp prima di ogni gara" },
-            { number: "0 minuti", label: "di risposta con RaceBot attivo" },
+            { number: "0 minuti", label: "di risposta con Repliq attivo" },
           ].map((stat, i) => (
             <div key={i}>
               <div className="text-4xl font-extrabold mb-2">{stat.number}</div>
@@ -154,7 +154,7 @@ export default function LandingPage() {
             {[
               { icon: "📱", title: "200+ messaggi WhatsApp", desc: "Prima di ogni gara, il telefono non smette di squillare con le stesse domande." },
               { icon: "🔁", title: "Sempre le stesse 10 domande", desc: "Orari, parcheggi, ritiro pettorali, rimborsi. Ogni volta, da capo." },
-              { icon: "😴", title: "Di notte, nei weekend", desc: "I partecipanti chiedono quando tu non puoi rispondere. RaceBot sì." },
+              { icon: "😴", title: "Di notte, nei weekend", desc: "I partecipanti chiedono quando tu non puoi rispondere. Repliq sì." },
             ].map((item, i) => (
               <div key={i} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                 <div className="text-3xl mb-3">{item.icon}</div>
@@ -188,19 +188,19 @@ export default function LandingPage() {
       <section className="bg-gray-50 py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-extrabold mb-4">Un assistente completo, non solo un chatbot</h2>
-          <p className="text-gray-500 text-lg mb-14">RaceBot non si limita a rispondere dal regolamento. Gestisce l&apos;intera comunicazione con i partecipanti.</p>
+          <p className="text-gray-500 text-lg mb-14">Repliq non si limita a rispondere dal regolamento. Gestisce l&apos;intera comunicazione con i partecipanti.</p>
           <div className="grid md:grid-cols-3 gap-6 text-left">
             {[
               {
                 icon: "📄",
                 title: "Risponde dal regolamento",
-                desc: "Carica il PDF e RaceBot risponde a tutte le domande basandosi sui contenuti ufficiali della gara.",
+                desc: "Carica il PDF e Repliq risponde a tutte le domande basandosi sui contenuti ufficiali della gara.",
                 tag: "Base"
               },
               {
                 icon: "✍️",
                 title: "Risponde con le tue parole",
-                desc: "Aggiungi direttamente le tue risposte personalizzate. RaceBot le usa per rispondere esattamente come faresti tu.",
+                desc: "Aggiungi direttamente le tue risposte personalizzate. Repliq le usa per rispondere esattamente come faresti tu.",
                 tag: "Base"
               },
               {
@@ -227,7 +227,7 @@ export default function LandingPage() {
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <div className="inline-block bg-blue-50 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">Solo su RaceBot Pro</div>
+            <div className="inline-block bg-blue-50 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">Solo su Repliq Pro</div>
             <h2 className="text-3xl font-extrabold mb-4">Nessuna domanda rimane senza risposta</h2>
             <p className="text-gray-500 leading-relaxed mb-6">Quando il chatbot non trova la risposta nel regolamento, non lascia il partecipante nel vuoto. Crea automaticamente un ticket, ti avvisa via email e ti permette di rispondere dal pannello. La risposta arriva direttamente al partecipante.</p>
             <div className="flex flex-col gap-3">
@@ -311,7 +311,7 @@ export default function LandingPage() {
                 <h3 className="font-bold text-lg mb-1">{plan.name}</h3>
                 <div className="text-3xl font-extrabold text-blue-600 mb-1">{plan.price}<span className="text-sm text-gray-400 font-normal">{plan.period}</span></div>
                 <p className="text-gray-500 text-sm mb-6 flex-1">{plan.desc}</p>
-                <a href="#" className="bg-blue-600 text-white py-2 rounded-xl text-sm font-semibold hover:bg-blue-700 transition text-center">Inizia ora</a>
+                <a href="http://app.repliq.it/register" className="bg-blue-600 text-white py-2 rounded-xl text-sm font-semibold hover:bg-blue-700 transition text-center">Inizia ora</a>
               </div>
             ))}
           </div>
@@ -361,8 +361,8 @@ export default function LandingPage() {
       {/* CTA FINALE */}
       <section className="bg-blue-600 py-24 px-6 text-white text-center">
         <h2 className="text-4xl font-extrabold mb-4">Pronto a liberarti dai messaggi?</h2>
-        <p className="text-blue-200 text-lg mb-10 max-w-xl mx-auto">Configura RaceBot in 5 minuti. La prossima gara, i partecipanti trovano tutto da soli.</p>
-        <a href="#prezzi" className="bg-white text-blue-600 px-10 py-4 rounded-full font-extrabold text-lg hover:bg-blue-50 transition shadow-xl">
+        <p className="text-blue-200 text-lg mb-10 max-w-xl mx-auto">Configura Repliq in 5 minuti. La prossima gara, i partecipanti trovano tutto da soli.</p>
+        <a href="http://app.repliq.it/register" className="bg-white text-blue-600 px-10 py-4 rounded-full font-extrabold text-lg hover:bg-blue-50 transition shadow-xl">
           Inizia gratis →
         </a>
         <p className="text-blue-300 text-sm mt-4">Nessuna carta di credito richiesta</p>
@@ -370,9 +370,9 @@ export default function LandingPage() {
 
       {/* FOOTER */}
       <footer className="py-10 px-6 border-t border-gray-100 text-center text-sm text-gray-400">
-        <p className="font-bold text-gray-700 mb-2">🏃 RaceBot</p>
+        <p className="font-bold text-gray-700 mb-2">⚡ Repliq</p>
         <p>Il chatbot AI per organizzatori di eventi sportivi</p>
-        <p className="mt-4">© 2025 RaceBot · <a href="#" className="hover:text-blue-500">Privacy</a> · <a href="#" className="hover:text-blue-500">Termini</a></p>
+        <p className="mt-4">© 2025 Repliq · <a href="#" className="hover:text-blue-500">Privacy</a> · <a href="#" className="hover:text-blue-500">Termini</a></p>
       </footer>
 
     </main>
