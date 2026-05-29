@@ -424,22 +424,27 @@ export default function LandingPage() {
           </div>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-violet-600 rounded-2xl flex items-center justify-center text-3xl mb-6">🏔️</div>
-              <p className="text-gray-600 leading-relaxed text-lg mb-6">
-                Mi chiamo <strong className="text-gray-900">Giacomo Nalesso</strong>. Sono un trail runner da 6 anni e appassionato di tecnologia. Ho partecipato a decine di gare e da ogni lato — come atleta — ho visto quanto la comunicazione tra organizzatori e partecipanti sia caotica.
-              </p>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                Messaggi WhatsApp a tutte le ore, stesse domande ripetute mille volte, informazioni difficili da trovare. Ho costruito Repliq per risolvere esattamente questo problema — perché lo conosco dall&apos;interno.
-              </p>
+              <div className="relative mb-8">
+                <img
+                  src="/giacomo.jpg"
+                  alt="Giacomo Nalesso - Trail Runner"
+                  className="w-full rounded-2xl object-cover shadow-xl"
+                  style={{maxHeight: "420px", objectPosition: "center top"}}
+                />
+                <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-xl shadow-md">
+                  <p className="font-bold text-sm text-gray-900">Giacomo Nalesso</p>
+                  <p className="text-xs text-gray-500">Fondatore · Trail runner da 6 anni</p>
+                </div>
+              </div>
               <div className="flex items-center gap-3 text-sm text-gray-500">
                 <span className="flex items-center gap-1.5 bg-gray-50 px-3 py-1.5 rounded-full border border-gray-100">🏃 Trail runner da 6 anni</span>
                 <span className="flex items-center gap-1.5 bg-gray-50 px-3 py-1.5 rounded-full border border-gray-100">💻 Dev & AI enthusiast</span>
               </div>
             </div>
             <div className="bg-gradient-to-br from-blue-50 to-violet-50 rounded-2xl p-8 border border-blue-100">
-              <p className="text-blue-700 font-bold text-sm uppercase tracking-widest mb-4">La visione</p>
+              <p className="text-blue-700 font-bold text-sm uppercase tracking-widest mb-4">La storia</p>
               <p className="text-gray-700 leading-relaxed text-lg font-medium mb-6">
-                &ldquo;Ogni organizzatore merita uno strumento professionale per comunicare con i propri atleti. Non un foglio Google, non un gruppo WhatsApp — un assistente AI che lavora al posto tuo.&rdquo;
+                &ldquo;Sono un trail runner da 6 anni e appassionato di tecnologia. Ho partecipato a decine di gare e ho visto dall&apos;interno quanto la comunicazione tra organizzatori e partecipanti sia caotica. Messaggi WhatsApp a tutte le ore, stesse domande ripetute mille volte. Ho costruito Repliq per risolvere esattamente questo.&rdquo;
               </p>
               <div className="flex flex-col gap-3">
                 {[
