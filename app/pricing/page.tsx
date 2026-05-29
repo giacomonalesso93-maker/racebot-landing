@@ -136,6 +136,7 @@ export default function PricingPage() {
         </Link>
         <div className="flex items-center gap-6">
           <Link href="/" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">Home</Link>
+          <a href="http://app.repliq.it/login" className="text-sm text-gray-500 hover:text-gray-900 transition-colors font-medium">Accedi</a>
           <a href="http://app.repliq.it/register" className="text-sm bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
             Inizia gratis
           </a>

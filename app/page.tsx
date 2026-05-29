@@ -57,6 +57,9 @@ export default function LandingPage() {
             <a href="#chi-siamo" className="hover:text-blue-600 transition-colors">Chi siamo</a>
             <a href="#faq" className="hover:text-blue-600 transition-colors">FAQ</a>
           </div>
+          <a href="http://app.repliq.it/login" className="text-sm text-gray-500 hover:text-gray-900 transition-colors font-medium">
+            Accedi
+          </a>
           <a href="http://app.repliq.it/register" className="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 transition-colors shadow-sm">
             Inizia gratis →
           </a>
