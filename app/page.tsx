@@ -11,10 +11,10 @@ const CHAT_MESSAGES = [
 ];
 
 const STEPS = [
-  { icon: "📄", title: "Carica il regolamento", desc: "Carica il PDF della tua gara. Repliq lo legge e memorizza tutto automaticamente." },
-  { icon: "🤖", title: "Il chatbot impara", desc: "L'AI analizza ogni dettaglio: orari, percorso, logistica, regole." },
-  { icon: "🔗", title: "Condividi il link", desc: "Ottieni un link diretto o un QR code da condividere in 30 secondi." },
-  { icon: "💬", title: "I partecipanti chiedono", desc: "Il chatbot risponde H24. Le domande senza risposta diventano ticket." },
+  { icon: "📄", title: "Carica i tuoi contenuti", desc: "PDF del regolamento, testo libero, risposte personalizzate. Repliq legge e indicizza tutto con tecnologia RAG." },
+  { icon: "🧠", title: "L'AI elabora e impara", desc: "Il sistema RAG (Retrieval-Augmented Generation) recupera solo le informazioni rilevanti per ogni domanda — risposte precise, mai inventate." },
+  { icon: "🔗", title: "Scegli come condividere", desc: "Pagina pubblica dedicata con il tuo logo, widget da embed nel tuo sito, o QR code per il giorno della gara." },
+  { icon: "💬", title: "I partecipanti chiedono", desc: "Il chatbot risponde H24 in qualsiasi lingua. Le domande senza risposta diventano ticket per te." },
 ];
 
 const FEATURES = [
@@ -54,6 +54,7 @@ export default function LandingPage() {
             <a href="#come-funziona" className="hover:text-blue-600 transition-colors">Come funziona</a>
             <a href="#funzionalita" className="hover:text-blue-600 transition-colors">Funzionalità</a>
             <a href="/pricing" className="hover:text-blue-600 transition-colors font-semibold">Prezzi</a>
+            <a href="#chi-siamo" className="hover:text-blue-600 transition-colors">Chi siamo</a>
             <a href="#faq" className="hover:text-blue-600 transition-colors">FAQ</a>
           </div>
           <a href="http://app.repliq.it/register" className="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 transition-colors shadow-sm">
@@ -270,6 +271,95 @@ export default function LandingPage() {
                   <span className={`text-xs px-2.5 py-1 rounded-full font-semibold border ${t.color}`}>{t.status}</span>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TECNOLOGIA RAG */}
+      <section className="py-24 px-6 bg-gray-50">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <div className="inline-block bg-blue-50 text-blue-700 text-xs font-bold px-3 py-1.5 rounded-full mb-4 border border-blue-100">Tecnologia</div>
+            <h2 className="text-4xl font-extrabold mb-4 tracking-tight">Non è un chatbot qualsiasi.<br /><span className="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">È RAG.</span></h2>
+            <p className="text-gray-500 leading-relaxed mb-6">Repliq usa la tecnologia <strong className="text-gray-700">RAG — Retrieval-Augmented Generation</strong>: prima recupera le informazioni esatte dai tuoi documenti, poi genera la risposta. Il risultato è un chatbot che non inventa nulla e cita sempre fonti reali.</p>
+            <div className="flex flex-col gap-4">
+              {[
+                { icon: "📄", title: "PDF del regolamento", desc: "Carica il documento ufficiale — viene indicizzato automaticamente." },
+                { icon: "✍️", title: "Testo libero", desc: "Aggiungi informazioni extra in formato testo, senza bisogno di un PDF." },
+                { icon: "💬", title: "Risposte personalizzate", desc: "Scrivi le tue risposte precise a domande frequenti specifiche della tua gara." },
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
+                  <span className="text-2xl flex-shrink-0">{item.icon}</span>
+                  <div>
+                    <p className="font-bold text-sm text-gray-900">{item.title}</p>
+                    <p className="text-gray-500 text-sm mt-0.5">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="relative">
+            <div className="absolute -inset-4 bg-gradient-to-br from-blue-50 to-violet-50 rounded-3xl" />
+            <div className="relative bg-white rounded-2xl p-6 border border-gray-100 shadow-lg">
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Come funziona il RAG</p>
+              <div className="flex flex-col gap-3">
+                {[
+                  { step: "1", label: "Domanda del partecipante", desc: "\"Ci sono ristori al km 25?\"", color: "bg-blue-50 border-blue-100" },
+                  { step: "2", label: "Ricerca semantica", desc: "Il sistema recupera i paragrafi rilevanti dai tuoi documenti", color: "bg-violet-50 border-violet-100" },
+                  { step: "3", label: "Risposta precisa", desc: "\"Sì, al km 25 c'è un ristoro con acqua, sali e frutta. GPS: 45.123, 11.456\"", color: "bg-green-50 border-green-100" },
+                ].map((item, i) => (
+                  <div key={i} className={`rounded-xl p-4 border ${item.color}`}>
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="w-5 h-5 bg-blue-600 text-white rounded-full text-xs font-bold flex items-center justify-center flex-shrink-0">{item.step}</span>
+                      <p className="font-bold text-sm text-gray-700">{item.label}</p>
+                    </div>
+                    <p className="text-gray-500 text-xs ml-7">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CHI SIAMO */}
+      <section id="chi-siamo" className="py-24 px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="text-blue-600 font-bold text-sm uppercase tracking-widest mb-3">Chi siamo</p>
+            <h2 className="text-4xl font-extrabold tracking-tight">Nato da un atleta,<br />costruito per gli organizzatori</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-violet-600 rounded-2xl flex items-center justify-center text-3xl mb-6">🏔️</div>
+              <p className="text-gray-600 leading-relaxed text-lg mb-6">
+                Mi chiamo <strong className="text-gray-900">Giacomo Nalesso</strong>. Sono un trail runner da 6 anni e appassionato di tecnologia. Ho partecipato a decine di gare e da ogni lato — come atleta — ho visto quanto la comunicazione tra organizzatori e partecipanti sia caotica.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                Messaggi WhatsApp a tutte le ore, stesse domande ripetute mille volte, informazioni difficili da trovare. Ho costruito Repliq per risolvere esattamente questo problema — perché lo conosco dall&apos;interno.
+              </p>
+              <div className="flex items-center gap-3 text-sm text-gray-500">
+                <span className="flex items-center gap-1.5 bg-gray-50 px-3 py-1.5 rounded-full border border-gray-100">🏃 Trail runner da 6 anni</span>
+                <span className="flex items-center gap-1.5 bg-gray-50 px-3 py-1.5 rounded-full border border-gray-100">💻 Dev & AI enthusiast</span>
+              </div>
+            </div>
+            <div className="bg-gradient-to-br from-blue-50 to-violet-50 rounded-2xl p-8 border border-blue-100">
+              <p className="text-blue-700 font-bold text-sm uppercase tracking-widest mb-4">La visione</p>
+              <p className="text-gray-700 leading-relaxed text-lg font-medium mb-6">
+                &ldquo;Ogni organizzatore merita uno strumento professionale per comunicare con i propri atleti. Non un foglio Google, non un gruppo WhatsApp — un assistente AI che lavora al posto tuo.&rdquo;
+              </p>
+              <div className="flex flex-col gap-3">
+                {[
+                  "Risponde in qualsiasi lingua, H24",
+                  "Conosce ogni dettaglio della tua gara",
+                  "Non lascia nessuna domanda senza risposta",
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-2 text-sm text-gray-600">
+                    <span className="text-blue-500 font-bold">✓</span> {item}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
