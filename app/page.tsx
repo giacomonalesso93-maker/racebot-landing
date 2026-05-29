@@ -48,7 +48,7 @@ export default function LandingPage() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
           <a href="/">
-            <img src="/logo.svg" alt="Repliq" className="h-8" />
+            <span className="text-2xl font-black text-blue-600 tracking-tight">Repliq</span>
           </a>
           <div className="hidden md:flex items-center gap-8 text-sm text-gray-500">
             <a href="#come-funziona" className="hover:text-blue-600 transition-colors">Come funziona</a>
@@ -412,7 +412,7 @@ export default function LandingPage() {
       <footer className="py-12 px-6 border-t border-gray-100">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex flex-col items-center md:items-start gap-2">
-            <img src="/logo.svg" alt="Repliq" className="h-7" />
+            <span className="text-xl font-black text-gray-700 tracking-tight">Repliq</span>
             <p className="text-gray-400 text-sm">Il chatbot AI per organizzatori di eventi sportivi</p>
           </div>
           <div className="flex items-center gap-8 text-sm text-gray-400">
