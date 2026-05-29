@@ -424,19 +424,9 @@ export default function LandingPage() {
           </div>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="relative mb-8">
-                <img
-                  src="/giacomo.jpeg"
-                  alt="Giacomo Nalesso - Trail Runner"
-                  className="w-full rounded-2xl object-cover shadow-xl"
-                  style={{maxHeight: "420px", objectPosition: "center top"}}
-                />
-                <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-xl shadow-md">
-                  <p className="font-bold text-sm text-gray-900">Giacomo Nalesso</p>
-                  <p className="text-xs text-gray-500">Fondatore · Trail runner da 6 anni</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 text-sm text-gray-500">
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-violet-600 rounded-2xl flex items-center justify-center text-4xl mb-6">🏔️</div>
+              <h3 className="text-2xl font-extrabold text-gray-900 mb-4">Giacomo Nalesso</h3>
+              <div className="flex items-center gap-3 text-sm text-gray-500 mb-6">
                 <span className="flex items-center gap-1.5 bg-gray-50 px-3 py-1.5 rounded-full border border-gray-100">🏃 Trail runner da 6 anni</span>
                 <span className="flex items-center gap-1.5 bg-gray-50 px-3 py-1.5 rounded-full border border-gray-100">💻 Dev & AI enthusiast</span>
               </div>
