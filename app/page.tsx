@@ -426,7 +426,7 @@ export default function LandingPage() {
             <div>
               <div className="relative mb-8">
                 <img
-                  src="/giacomo.jpg"
+                  src="/giacomo.jpeg"
                   alt="Giacomo Nalesso - Trail Runner"
                   className="w-full rounded-2xl object-cover shadow-xl"
                   style={{maxHeight: "420px", objectPosition: "center top"}}
