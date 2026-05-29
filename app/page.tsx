@@ -420,33 +420,24 @@ export default function LandingPage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-blue-600 font-bold text-sm uppercase tracking-widest mb-3">Chi siamo</p>
-            <h2 className="text-4xl font-extrabold tracking-tight">Nato da un atleta,<br />costruito per gli organizzatori</h2>
+            <h2 className="text-4xl font-extrabold tracking-tight mb-4">Nato da un atleta,<br />costruito per gli organizzatori</h2>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">Repliq nasce dall&apos;esperienza diretta sul campo — non da una startup che ha letto di sport, ma da chi lo vive ogni settimana.</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-violet-600 rounded-2xl flex items-center justify-center text-4xl mb-6">🏔️</div>
-              <h3 className="text-2xl font-extrabold text-gray-900 mb-4">Giacomo Nalesso</h3>
-              <div className="flex items-center gap-3 text-sm text-gray-500 mb-6">
-                <span className="flex items-center gap-1.5 bg-gray-50 px-3 py-1.5 rounded-full border border-gray-100">🏃 Trail runner da 6 anni</span>
-                <span className="flex items-center gap-1.5 bg-gray-50 px-3 py-1.5 rounded-full border border-gray-100">💻 Dev & AI enthusiast</span>
+          <div className="bg-gradient-to-br from-blue-50 to-violet-50 rounded-2xl p-10 border border-blue-100 max-w-2xl mx-auto">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-violet-600 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">GN</div>
+              <div>
+                <p className="font-bold text-lg text-gray-900">Giacomo Nalesso</p>
+                <p className="text-sm text-gray-500">Fondatore · Trail runner da 6 anni · Dev & AI enthusiast</p>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-blue-50 to-violet-50 rounded-2xl p-8 border border-blue-100">
-              <p className="text-blue-700 font-bold text-sm uppercase tracking-widest mb-4">La storia</p>
-              <p className="text-gray-700 leading-relaxed text-lg font-medium mb-6">
-                &ldquo;Sono un trail runner da 6 anni e appassionato di tecnologia. Ho partecipato a decine di gare e ho visto dall&apos;interno quanto la comunicazione tra organizzatori e partecipanti sia caotica. Messaggi WhatsApp a tutte le ore, stesse domande ripetute mille volte. Ho costruito Repliq per risolvere esattamente questo.&rdquo;
-              </p>
-              <div className="flex flex-col gap-3">
-                {[
-                  "Risponde in qualsiasi lingua, H24",
-                  "Conosce ogni dettaglio della tua gara",
-                  "Non lascia nessuna domanda senza risposta",
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-2 text-sm text-gray-600">
-                    <span className="text-blue-500 font-bold">✓</span> {item}
-                  </div>
-                ))}
-              </div>
+            <p className="text-gray-700 leading-relaxed text-base mb-6 italic">
+              &ldquo;Ho partecipato a decine di gare e ho visto dall&apos;interno quanto la comunicazione tra organizzatori e partecipanti sia caotica. Messaggi WhatsApp a tutte le ore, stesse domande ripetute mille volte, informazioni difficili da trovare. Ho costruito Repliq per risolvere esattamente questo — perché conosco il problema dall&apos;interno.&rdquo;
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {["🏃 Trail running", "🚵 MTB", "💻 Software developer", "🤖 AI & tecnologia"].map((tag, i) => (
+                <span key={i} className="bg-white text-gray-600 text-xs px-3 py-1.5 rounded-full border border-blue-100 font-medium">{tag}</span>
+              ))}
             </div>
           </div>
         </div>
