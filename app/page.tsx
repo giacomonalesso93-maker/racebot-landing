@@ -18,11 +18,11 @@ const STEPS = [
 ];
 
 const FEATURES = [
-  { icon: "📄", title: "Risponde dal regolamento", desc: "Carica il PDF e Repliq risponde a tutte le domande basandosi sui contenuti ufficiali.", tag: "Base", color: "blue" },
-  { icon: "✍️", title: "Risponde con le tue parole", desc: "Aggiungi le tue risposte personalizzate. Repliq le usa esattamente come faresti tu.", tag: "Base", color: "blue" },
+  { icon: "📄", title: "Risponde dal regolamento", desc: "Carica PDF o testo libero. Repliq indicizza tutto e risponde con precisione, citando sempre la fonte.", tag: "Base", color: "blue" },
+  { icon: "🗺️", title: "Mappa interattiva del percorso", desc: "Importa il file GPX e i partecipanti vedono il percorso completo con ristori, km e dislivello.", tag: "Base", color: "blue" },
+  { icon: "📍", title: "Guida logistica completa", desc: "Parcheggi, partenza, arrivo, bagni, deposito sacche: ogni punto con link diretto alle mappe.", tag: "Base", color: "blue" },
+  { icon: "🥤", title: "Ristori strutturati", desc: "Ogni ristoro con posizione GPS, dotazione (acqua, sali, frutta, gel) e orari di apertura.", tag: "Base", color: "blue" },
   { icon: "🎟️", title: "Ticketing automatico", desc: "Quando non sa rispondere, crea un ticket, ti notifica e invia la risposta al partecipante.", tag: "Pro", color: "violet" },
-  { icon: "🗺️", title: "Mappe e logistica", desc: "Parcheggi, ristori, partenza e arrivo: tutte le posizioni GPS sempre disponibili.", tag: "Base", color: "blue" },
-  { icon: "📊", title: "Analytics avanzate", desc: "Statistiche sulle domande più frequenti, export CSV, insights per migliorare le prossime gare.", tag: "Pro", color: "violet" },
   { icon: "🌍", title: "Multilingua automatico", desc: "Risponde nella lingua del partecipante. Italiano, inglese, francese, tedesco e altro.", tag: "Pro", color: "violet" },
 ];
 
@@ -80,7 +80,7 @@ export default function LandingPage() {
               <span className="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">che risponde H24</span>
             </h1>
             <p className="text-lg text-gray-500 mb-8 leading-relaxed max-w-md">
-              Repliq gestisce automaticamente tutte le domande dei partecipanti — dal regolamento alle info logistiche. Tu organizzi la gara, lui pensa al resto.
+              Repliq non risponde solo alle domande — guida ogni partecipante nella logistica della gara: percorso GPX, ristori, parcheggi, partenza e arrivo. H24, in qualsiasi lingua.
             </p>
             <div className="flex flex-wrap gap-3 mb-6">
               <a href="http://app.repliq.it/register" className="bg-blue-600 text-white px-8 py-3.5 rounded-full font-semibold text-base hover:bg-blue-700 transition-colors shadow-lg shadow-blue-200">
@@ -202,6 +202,54 @@ export default function LandingPage() {
                 <p className="text-gray-500 text-sm leading-relaxed">{step.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* LOGISTICA */}
+      <section className="py-24 px-6 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="text-blue-600 font-bold text-sm uppercase tracking-widest mb-3">Molto più di un chatbot</p>
+            <h2 className="text-4xl font-extrabold tracking-tight mb-4">La guida logistica<br />di ogni partecipante</h2>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">Dal momento in cui si iscrive fino al traguardo, ogni atleta ha tutte le informazioni a portata di tap — senza chiamarti.</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 items-start">
+            <div className="flex flex-col gap-4">
+              {[
+                { icon: "🗺️", title: "Percorso GPX interattivo", desc: "Importa il file GPX e i partecipanti vedono il tracciato completo con dislivello, km progressivi e punti di interesse direttamente nella chat." },
+                { icon: "🥤", title: "Ristori con dotazione dettagliata", desc: "Ogni ristoro ha la sua posizione GPS, l'elenco di cosa troveranno (acqua, sali, frutta, gel, brodo) e gli orari. L'atleta sa già cosa aspettarsi prima di arrivare." },
+                { icon: "🅿️", title: "Parcheggi con link diretto", desc: "Aggiungi le aree parcheggio con link a Google Maps. Il partecipante clicca e parte il navigatore — zero confusione il giorno della gara." },
+                { icon: "📍", title: "Tutti i punti chiave", desc: "Partenza, arrivo, deposito sacche, bagni, pronto soccorso, zona cambio: ogni posizione raggiungibile con un tap." },
+              ].map((item, i) => (
+                <div key={i} className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm flex items-start gap-4 hover:shadow-md transition-shadow">
+                  <span className="text-3xl flex-shrink-0">{item.icon}</span>
+                  <div>
+                    <h3 className="font-bold text-base mb-1">{item.title}</h3>
+                    <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="sticky top-24">
+              <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+                <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-5 py-4 flex items-center gap-3">
+                  <div className="w-9 h-9 bg-white/20 rounded-xl flex items-center justify-center text-lg">🏔️</div>
+                  <div>
+                    <p className="text-white font-bold text-sm">Trail delle Dolomiti</p>
+                    <p className="text-blue-200 text-xs flex items-center gap-1"><span className="w-1.5 h-1.5 bg-green-400 rounded-full"></span> Assistente attivo</p>
+                  </div>
+                </div>
+                <div className="p-4 flex flex-col gap-3 bg-gray-50/50">
+                  <div className="flex justify-end"><div className="bg-blue-600 text-white text-sm px-4 py-2.5 rounded-2xl rounded-br-sm max-w-[80%]">Dove trovo il deposito sacche?</div></div>
+                  <div className="flex justify-start"><div className="bg-white text-gray-800 text-sm px-4 py-2.5 rounded-2xl rounded-bl-sm shadow-sm border border-gray-100 max-w-[80%]">Il deposito sacche è in zona partenza, vicino al tendone blu. Apre alle 7:00. 📍 <span className="text-blue-600 underline">Vedi su mappa</span></div></div>
+                  <div className="flex justify-end"><div className="bg-blue-600 text-white text-sm px-4 py-2.5 rounded-2xl rounded-br-sm max-w-[80%]">Cosa c'è al ristoro del km 18?</div></div>
+                  <div className="flex justify-start"><div className="bg-white text-gray-800 text-sm px-4 py-2.5 rounded-2xl rounded-bl-sm shadow-sm border border-gray-100 max-w-[80%]">Al km 18 trovi: acqua, Coca-Cola, sali minerali, frutta fresca e brodo caldo. Il ristoro è aperto dalle 9:00 alle 16:00. 🥤</div></div>
+                  <div className="flex justify-end"><div className="bg-blue-600 text-white text-sm px-4 py-2.5 rounded-2xl rounded-br-sm max-w-[80%]">Dove parcheggio?</div></div>
+                  <div className="flex justify-start"><div className="bg-white text-gray-800 text-sm px-4 py-2.5 rounded-2xl rounded-bl-sm shadow-sm border border-gray-100 max-w-[80%]">Hai 3 parcheggi disponibili: P1 gratuito in Via Roma (500m dalla partenza), P2 allo stadio (navetta inclusa), P3 al centro sportivo. 🅿️ <span className="text-blue-600 underline">Apri in Maps</span></div></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
