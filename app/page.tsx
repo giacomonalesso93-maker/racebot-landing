@@ -40,16 +40,19 @@ const SPORTS = ["🏃 Trail Running", "🚴 Ciclismo", "🏊 Triathlon", "⛷️
 export default function LandingPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [visibleMessages, setVisibleMessages] = useState(2);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <main className="bg-white text-gray-900 font-sans overflow-x-hidden">
 
       {/* NAV */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
           <a href="/">
             <span className="text-2xl font-black text-blue-600 tracking-tight">Repliq</span>
           </a>
+
+          {/* Desktop menu */}
           <div className="hidden md:flex items-center gap-8 text-sm text-gray-500">
             <a href="#come-funziona" className="hover:text-blue-600 transition-colors">Come funziona</a>
             <a href="#funzionalita" className="hover:text-blue-600 transition-colors">Funzionalità</a>
@@ -57,13 +60,51 @@ export default function LandingPage() {
             <a href="#chi-siamo" className="hover:text-blue-600 transition-colors">Chi siamo</a>
             <a href="#faq" className="hover:text-blue-600 transition-colors">FAQ</a>
           </div>
-          <a href="http://app.repliq.it/login" className="text-sm text-gray-500 hover:text-gray-900 transition-colors font-medium">
-            Accedi
-          </a>
-          <a href="http://app.repliq.it/register" className="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 transition-colors shadow-sm">
-            Inizia gratis →
-          </a>
+
+          {/* Desktop CTA */}
+          <div className="hidden md:flex items-center gap-3">
+            <a href="http://app.repliq.it/login" className="text-sm border border-blue-200 text-blue-600 px-4 py-2 rounded-full font-semibold hover:bg-blue-50 transition-colors">
+              Accedi
+            </a>
+            <a href="http://app.repliq.it/register" className="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 transition-colors shadow-sm">
+              Inizia gratis →
+            </a>
+          </div>
+
+          {/* Mobile: CTA + hamburger */}
+          <div className="flex md:hidden items-center gap-2">
+            <a href="http://app.repliq.it/login" className="text-sm border border-blue-200 text-blue-600 px-3 py-1.5 rounded-full font-semibold hover:bg-blue-50 transition-colors">
+              Accedi
+            </a>
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              aria-label="Menu"
+            >
+              <div className="w-5 flex flex-col gap-1">
+                <span className={`h-0.5 bg-gray-700 rounded transition-all ${menuOpen ? "rotate-45 translate-y-1.5" : ""}`} style={{display:"block"}}></span>
+                <span className={`h-0.5 bg-gray-700 rounded transition-all ${menuOpen ? "opacity-0" : ""}`} style={{display:"block"}}></span>
+                <span className={`h-0.5 bg-gray-700 rounded transition-all ${menuOpen ? "-rotate-45 -translate-y-1.5" : ""}`} style={{display:"block"}}></span>
+              </div>
+            </button>
+          </div>
         </div>
+
+        {/* Mobile dropdown menu */}
+        {menuOpen && (
+          <div className="md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4 shadow-lg">
+            <a href="#come-funziona" onClick={() => setMenuOpen(false)} className="text-sm text-gray-600 font-medium hover:text-blue-600 transition-colors py-1">Come funziona</a>
+            <a href="#funzionalita" onClick={() => setMenuOpen(false)} className="text-sm text-gray-600 font-medium hover:text-blue-600 transition-colors py-1">Funzionalità</a>
+            <a href="/pricing" onClick={() => setMenuOpen(false)} className="text-sm text-gray-600 font-semibold hover:text-blue-600 transition-colors py-1">Prezzi</a>
+            <a href="#chi-siamo" onClick={() => setMenuOpen(false)} className="text-sm text-gray-600 font-medium hover:text-blue-600 transition-colors py-1">Chi siamo</a>
+            <a href="#faq" onClick={() => setMenuOpen(false)} className="text-sm text-gray-600 font-medium hover:text-blue-600 transition-colors py-1">FAQ</a>
+            <div className="pt-2 border-t border-gray-100">
+              <a href="http://app.repliq.it/register" className="block text-center bg-blue-600 text-white px-5 py-3 rounded-full text-sm font-semibold hover:bg-blue-700 transition-colors">
+                Inizia gratis →
+              </a>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* HERO */}
