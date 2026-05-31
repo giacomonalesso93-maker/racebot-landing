@@ -597,6 +597,147 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* GPX NEL CHATBOT */}
+      <section className="py-24 px-6">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <div className="inline-block bg-green-50 text-green-700 text-xs font-bold px-3 py-1.5 rounded-full mb-4 border border-green-100">Percorso interattivo</div>
+            <h2 className="text-4xl font-extrabold mb-4 tracking-tight">Il percorso GPX<br />dentro la chat</h2>
+            <p className="text-gray-500 leading-relaxed mb-6">Carica il file GPX e i partecipanti vedono il tracciato reale direttamente nel chatbot — con mappa interattiva, km progressivi, dislivello e tutti i punti di interesse sovrapposti.</p>
+            <div className="flex flex-col gap-3">
+              {[
+                { icon: "🗺️", text: "Mappa del percorso con tracciato blu" },
+                { icon: "🏁", text: "Partenza e arrivo evidenziati" },
+                { icon: "🥤", text: "Ristori, punti medici e depositi sulla mappa" },
+                { icon: "🅿️", text: "Parcheggi con link diretto a Google Maps" },
+                { icon: "💬", text: "Fanno domande sul percorso e ricevono risposte precise" },
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-3 text-sm text-gray-700">
+                  <span className="text-lg">{item.icon}</span> {item.text}
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* Mockup chat con mappa */}
+          <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+            <div className="bg-gradient-to-r from-blue-700 to-blue-600 px-4 py-3 flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center text-sm">🏔️</div>
+                <div>
+                  <div className="text-white text-xs font-bold">Tenno Trail 30km</div>
+                  <div className="text-blue-200 text-xs flex items-center gap-1"><span className="w-1.5 h-1.5 bg-green-400 rounded-full inline-block"></span> Attivo</div>
+                </div>
+              </div>
+              <button className="bg-white/15 text-white text-xs px-3 py-1 rounded-full font-semibold">📍 Mappa</button>
+            </div>
+            {/* Finta mappa */}
+            <div className="bg-slate-100 h-36 relative overflow-hidden">
+              <svg className="w-full h-full" viewBox="0 0 400 150">
+                <rect width="400" height="150" fill="#e2e8f0"/>
+                <path d="M20,120 Q60,80 100,90 Q140,100 180,60 Q220,20 260,40 Q300,60 340,30 Q360,20 380,35" stroke="#3b82f6" strokeWidth="3" fill="none" strokeLinecap="round"/>
+                <circle cx="20" cy="120" r="5" fill="#16a34a"/>
+                <circle cx="380" cy="35" r="5" fill="#dc2626"/>
+                <circle cx="100" cy="90" r="6" fill="#f59e0b"/>
+                <circle cx="220" cy="25" r="6" fill="#f59e0b"/>
+                <circle cx="320" cy="55" r="6" fill="#f59e0b"/>
+                <text x="26" y="118" fontSize="10" fill="#16a34a" fontWeight="bold">P</text>
+                <text x="97" y="105" fontSize="8" fill="#92400e">🥤</text>
+                <text x="217" y="40" fontSize="8" fill="#92400e">🥤</text>
+              </svg>
+            </div>
+            <div className="p-4 flex flex-col gap-3 bg-gray-50/50">
+              <div className="flex justify-end"><div className="bg-blue-600 text-white text-xs px-3 py-2 rounded-2xl rounded-br-sm max-w-[75%]">Al km 15 c&apos;è qualcosa?</div></div>
+              <div className="flex justify-start gap-2">
+                <div className="w-6 h-6 bg-blue-600 rounded-lg flex items-center justify-center text-xs flex-shrink-0">🏔️</div>
+                <div className="bg-white text-gray-800 text-xs px-3 py-2 rounded-2xl rounded-bl-sm shadow-sm border border-gray-100 max-w-[75%]">Al km 15 c&apos;è un <strong>ristoro</strong> con acqua, sali e frutta. C&apos;è anche un punto medico 200m dopo. 🥤</div>
+              </div>
+              <div className="flex justify-end"><div className="bg-blue-600 text-white text-xs px-3 py-2 rounded-2xl rounded-br-sm max-w-[75%]">Quanto dislivello positivo?</div></div>
+              <div className="flex justify-start gap-2">
+                <div className="w-6 h-6 bg-blue-600 rounded-lg flex items-center justify-center text-xs flex-shrink-0">🏔️</div>
+                <div className="bg-white text-gray-800 text-xs px-3 py-2 rounded-2xl rounded-bl-sm shadow-sm border border-gray-100 max-w-[75%]">Il percorso ha <strong>1.600m</strong> di dislivello positivo su 30km. Il tratto più impegnativo è tra km 8 e km 18. ⛰️</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* DASHBOARD STATISTICHE */}
+      <section className="py-24 px-6 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="text-blue-600 font-bold text-sm uppercase tracking-widest mb-3">Analytics</p>
+            <h2 className="text-4xl font-extrabold tracking-tight mb-4">Capisci cosa non funziona.<br /><span className="text-blue-600">Prima della gara.</span></h2>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">La dashboard ti mostra in tempo reale quante domande riceve il chatbot, quali argomenti preoccupano di più i partecipanti e dove il tuo regolamento ha lacune da colmare.</p>
+          </div>
+          {/* Mockup dashboard stats */}
+          <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden max-w-3xl mx-auto">
+            <div className="bg-gray-900 px-5 py-3 flex items-center gap-2">
+              <div className="flex gap-1.5"><div className="w-3 h-3 rounded-full bg-red-400"/><div className="w-3 h-3 rounded-full bg-yellow-400"/><div className="w-3 h-3 rounded-full bg-green-400"/></div>
+              <span className="text-gray-400 text-xs ml-2 font-medium">Repliq — Statistiche · Tenno Trail 2026</span>
+            </div>
+            <div className="p-6">
+              {/* Stat cards */}
+              <div className="grid grid-cols-4 gap-4 mb-6">
+                {[
+                  {v:"847", l:"Domande totali", c:"text-blue-600", bg:"bg-blue-50"},
+                  {v:"94%", l:"Risposte auto.", c:"text-green-600", bg:"bg-green-50"},
+                  {v:"52", l:"Ticket creati", c:"text-amber-600", bg:"bg-amber-50"},
+                  {v:"8", l:"Lacune trovate", c:"text-red-500", bg:"bg-red-50"},
+                ].map((s,i)=>(
+                  <div key={i} className={`${s.bg} rounded-xl p-3 text-center`}>
+                    <div className={`text-2xl font-extrabold ${s.c}`}>{s.v}</div>
+                    <div className="text-xs text-gray-500 mt-1">{s.l}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="grid md:grid-cols-2 gap-6">
+                {/* Top domande */}
+                <div>
+                  <div className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Domande più frequenti</div>
+                  {[
+                    {q:"Dove parcheggio?", n:142, pct:100, c:"bg-blue-500"},
+                    {q:"Orario partenza?", n:98, pct:69, c:"bg-blue-400"},
+                    {q:"Materiale obbligatorio?", n:87, pct:61, c:"bg-violet-500"},
+                    {q:"Ritiro pettorale?", n:71, pct:50, c:"bg-violet-400"},
+                    {q:"Ristori km 15?", n:54, pct:38, c:"bg-indigo-400"},
+                  ].map((item,i)=>(
+                    <div key={i} className="mb-2.5">
+                      <div className="flex justify-between text-xs mb-1">
+                        <span className="text-gray-700 font-medium">{item.q}</span>
+                        <span className="text-gray-400">{item.n}x</span>
+                      </div>
+                      <div className="h-2 bg-gray-100 rounded-full">
+                        <div className={`h-2 ${item.c} rounded-full transition-all`} style={{width:`${item.pct}%`}}/>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                {/* Lacune */}
+                <div>
+                  <div className="text-xs font-bold text-red-500 uppercase tracking-wider mb-3">⚠️ Lacune da colmare</div>
+                  <div className="flex flex-col gap-2 mb-4">
+                    {[
+                      "Come si fa il rimborso iscrizione?",
+                      "C'è assistenza medica al km 20?",
+                      "Posso cambiare categoria?",
+                      "Dove posso lasciare la bici?",
+                    ].map((q,i)=>(
+                      <div key={i} className="flex items-center gap-2 text-xs text-gray-700 bg-red-50 border border-red-100 rounded-lg px-3 py-2">
+                        <span className="text-red-400 font-bold">●</span> {q}
+                      </div>
+                    ))}
+                  </div>
+                  <div className="bg-green-50 border border-green-100 rounded-xl p-3">
+                    <div className="text-xs font-bold text-green-700 mb-1">💡 Suggerimento Repliq</div>
+                    <div className="text-xs text-green-600 leading-relaxed">Aggiungi una sezione rimborsi al regolamento — è la domanda senza risposta più frequente (23 ticket in 7 giorni).</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CHI SIAMO */}
       <section id="chi-siamo" className="py-24 px-6">
         <div className="max-w-4xl mx-auto">
