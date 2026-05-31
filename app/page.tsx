@@ -298,6 +298,188 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* 3 MODI DI DISTRIBUZIONE */}
+      <section className="py-24 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="text-blue-600 font-bold text-sm uppercase tracking-widest mb-3">Distribuzione</p>
+            <h2 className="text-4xl font-extrabold tracking-tight mb-4">3 modi per raggiungere<br />i tuoi partecipanti</h2>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">Scegli come condividere il chatbot — o usali tutti e tre insieme.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* BOLLA WIDGET */}
+            <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-lg transition-shadow">
+              <div className="bg-gradient-to-br from-indigo-500 to-violet-600 p-6 relative overflow-hidden">
+                <div className="absolute -top-4 -right-4 w-24 h-24 bg-white/10 rounded-full" />
+                <div className="relative">
+                  <div className="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center text-3xl mb-3">💬</div>
+                  <div className="text-white font-bold text-lg">Widget bolla</div>
+                  <div className="text-white/70 text-sm mt-1">Sul tuo sito web</div>
+                </div>
+                {/* Mockup bolla */}
+                <div className="mt-4 flex justify-end">
+                  <div className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-xl">💬</div>
+                </div>
+              </div>
+              <div className="p-5">
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">Aggiungi una riga di codice al tuo sito. Appare una bolla nell&apos;angolo — i visitatori la cliccano e chattano senza uscire dalla pagina.</p>
+                <div className="bg-gray-900 rounded-lg p-3 font-mono text-xs text-green-400 overflow-hidden">
+                  <span className="text-gray-500">&lt;!-- Repliq Widget --&gt;</span><br/>
+                  <span className="text-blue-400">&lt;iframe</span> <span className="text-yellow-400">src=</span><span className="text-green-400">&quot;repliq.it/widget/...&quot;</span><span className="text-blue-400">/&gt;</span>
+                </div>
+              </div>
+            </div>
+
+            {/* QR CODE */}
+            <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-lg transition-shadow">
+              <div className="bg-gradient-to-br from-blue-500 to-blue-700 p-6 relative overflow-hidden">
+                <div className="absolute -top-4 -right-4 w-24 h-24 bg-white/10 rounded-full" />
+                <div className="relative">
+                  <div className="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center text-3xl mb-3">📱</div>
+                  <div className="text-white font-bold text-lg">QR Code</div>
+                  <div className="text-white/70 text-sm mt-1">Stampa ovunque</div>
+                </div>
+                {/* Mockup QR */}
+                <div className="mt-4 flex justify-center">
+                  <div className="bg-white rounded-xl p-2 w-16 h-16 grid grid-cols-3 gap-0.5">
+                    {[1,1,1,1,0,1,1,1,1].map((v,i)=><div key={i} className={`rounded-sm ${v ? 'bg-gray-900' : 'bg-white'}`}/>)}
+                  </div>
+                </div>
+              </div>
+              <div className="p-5">
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">Scarica il QR code e stampalo sulla locandina, mappa cartacea, pettorale o banner. I partecipanti lo scansionano e sono subito nel chatbot.</p>
+                <div className="flex flex-wrap gap-2">
+                  {["📄 Locandina", "🗺️ Mappa gara", "🏃 Pettorale", "📢 Banner"].map((t,i) => (
+                    <span key={i} className="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded-full font-medium">{t}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* LINK DIRETTO */}
+            <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-lg transition-shadow">
+              <div className="bg-gradient-to-br from-emerald-500 to-teal-600 p-6 relative overflow-hidden">
+                <div className="absolute -top-4 -right-4 w-24 h-24 bg-white/10 rounded-full" />
+                <div className="relative">
+                  <div className="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center text-3xl mb-3">🔗</div>
+                  <div className="text-white font-bold text-lg">Link diretto</div>
+                  <div className="text-white/70 text-sm mt-1">Ovunque tu voglia</div>
+                </div>
+                <div className="mt-4 bg-white/15 rounded-xl p-2 font-mono text-xs text-white/90 truncate">
+                  app.repliq.it/chat/tenno-trail
+                </div>
+              </div>
+              <div className="p-5">
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">Copia il link e incollalo nell&apos;email di conferma iscrizione, WhatsApp, Telegram, Instagram bio o sito della gara.</p>
+                <div className="flex flex-wrap gap-2">
+                  {["📧 Email iscrizione", "💬 WhatsApp", "📸 Instagram", "🌐 Sito gara"].map((t,i) => (
+                    <span key={i} className="text-xs bg-emerald-50 text-emerald-700 px-2 py-1 rounded-full font-medium">{t}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* NON È UN CHATBOT — IMPARA */}
+      <section className="py-24 px-6 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="text-violet-600 font-bold text-sm uppercase tracking-widest mb-3">Intelligenza adattiva</p>
+            <h2 className="text-4xl font-extrabold tracking-tight mb-4">Non è un chatbot.<br /><span className="bg-gradient-to-r from-violet-600 to-blue-600 bg-clip-text text-transparent">È un sistema che migliora.</span></h2>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">Repliq analizza ogni domanda e ti mostra dove c&apos;è un problema — così ogni edizione è migliore della precedente.</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="flex flex-col gap-6">
+              <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center text-xl">🚨</div>
+                  <div>
+                    <div className="font-bold text-sm text-gray-900">Domande senza risposta</div>
+                    <div className="text-xs text-gray-400">Indicano lacune nel regolamento</div>
+                  </div>
+                </div>
+                <p className="text-gray-500 text-sm leading-relaxed">Ogni domanda a cui il chatbot non riesce a rispondere viene registrata. Repliq ti mostra un elenco prioritizzato delle lacune informative — così sai esattamente cosa aggiungere per la prossima edizione.</p>
+              </div>
+              <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center text-xl">📊</div>
+                  <div>
+                    <div className="font-bold text-sm text-gray-900">Le 10 domande più frequenti</div>
+                    <div className="text-xs text-gray-400">Capisce cosa preoccupa i partecipanti</div>
+                  </div>
+                </div>
+                <p className="text-gray-500 text-sm leading-relaxed">Vedi in tempo reale quali argomenti generano più domande — parcheggi, materiale, ritiro pettorale. Queste informazioni ti dicono dove la comunicazione è carente e dove intervenire.</p>
+              </div>
+              <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center text-xl">🔄</div>
+                  <div>
+                    <div className="font-bold text-sm text-gray-900">Loop di miglioramento continuo</div>
+                    <div className="text-xs text-gray-400">Ogni edizione è più efficiente</div>
+                  </div>
+                </div>
+                <p className="text-gray-500 text-sm leading-relaxed">Analisi → insight → aggiornamento del regolamento → meno domande → meno ticket. Con Repliq, la comunicazione della tua gara migliora automaticamente ad ogni edizione.</p>
+              </div>
+            </div>
+
+            {/* Dashboard mockup analytics */}
+            <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+              <div className="bg-gradient-to-r from-gray-900 to-gray-800 px-5 py-4 flex items-center gap-3">
+                <div className="flex gap-1.5">
+                  <div className="w-3 h-3 rounded-full bg-red-400"/>
+                  <div className="w-3 h-3 rounded-full bg-yellow-400"/>
+                  <div className="w-3 h-3 rounded-full bg-green-400"/>
+                </div>
+                <span className="text-gray-400 text-xs font-medium ml-2">Repliq Analytics — Tenno Trail 2026</span>
+              </div>
+              <div className="p-5">
+                <div className="grid grid-cols-3 gap-3 mb-5">
+                  {[
+                    {label:"Domande totali", value:"847", color:"text-blue-600"},
+                    {label:"Risposta auto.", value:"94%", color:"text-green-600"},
+                    {label:"Ticket aperti", value:"3", color:"text-amber-600"},
+                  ].map((s,i)=>(
+                    <div key={i} className="bg-gray-50 rounded-xl p-3 text-center">
+                      <div className={`text-xl font-extrabold ${s.color}`}>{s.value}</div>
+                      <div className="text-xs text-gray-400 mt-0.5">{s.label}</div>
+                    </div>
+                  ))}
+                </div>
+                <div className="mb-4">
+                  <div className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Domande più frequenti</div>
+                  {[
+                    {q:"Dove parcheggio?", n:142, pct:85},
+                    {q:"Orario partenza?", n:98, pct:60},
+                    {q:"Materiale obbligatorio?", n:87, pct:52},
+                    {q:"Dove ritiro il pettorale?", n:71, pct:43},
+                  ].map((item,i)=>(
+                    <div key={i} className="mb-2">
+                      <div className="flex justify-between text-xs mb-1">
+                        <span className="text-gray-700 font-medium">{item.q}</span>
+                        <span className="text-gray-400">{item.n}x</span>
+                      </div>
+                      <div className="h-1.5 bg-gray-100 rounded-full">
+                        <div className="h-1.5 bg-blue-500 rounded-full" style={{width:`${item.pct}%`}}/>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div>
+                  <div className="text-xs font-bold text-red-500 uppercase tracking-wider mb-2">⚠️ Lacune da colmare</div>
+                  {["Come si fa il rimborso iscrizione?", "C&apos;è assistenza medica sul percorso?"].map((q,i)=>(
+                    <div key={i} className="flex items-center gap-2 text-xs text-gray-600 bg-red-50 rounded-lg px-3 py-2 mb-1.5">
+                      <span className="text-red-400">●</span> {q}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FUNZIONALITÀ */}
       <section id="funzionalita" className="py-24 px-6 bg-gray-50">
         <div className="max-w-5xl mx-auto">
