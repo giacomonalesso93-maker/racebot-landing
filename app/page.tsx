@@ -382,104 +382,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* NON È UN CHATBOT — IMPARA */}
-      <section className="py-24 px-6 bg-gray-50">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-violet-600 font-bold text-sm uppercase tracking-widest mb-3">Intelligenza adattiva</p>
-            <h2 className="text-4xl font-extrabold tracking-tight mb-4">Non è un chatbot.<br /><span className="bg-gradient-to-r from-violet-600 to-blue-600 bg-clip-text text-transparent">È un sistema che migliora.</span></h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">Repliq analizza ogni domanda e ti mostra dove c&apos;è un problema — così ogni edizione è migliore della precedente.</p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="flex flex-col gap-6">
-              <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center text-xl">🚨</div>
-                  <div>
-                    <div className="font-bold text-sm text-gray-900">Domande senza risposta</div>
-                    <div className="text-xs text-gray-400">Indicano lacune nel regolamento</div>
-                  </div>
-                </div>
-                <p className="text-gray-500 text-sm leading-relaxed">Ogni domanda a cui il chatbot non riesce a rispondere viene registrata. Repliq ti mostra un elenco prioritizzato delle lacune informative — così sai esattamente cosa aggiungere per la prossima edizione.</p>
-              </div>
-              <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center text-xl">📊</div>
-                  <div>
-                    <div className="font-bold text-sm text-gray-900">Le 10 domande più frequenti</div>
-                    <div className="text-xs text-gray-400">Capisce cosa preoccupa i partecipanti</div>
-                  </div>
-                </div>
-                <p className="text-gray-500 text-sm leading-relaxed">Vedi in tempo reale quali argomenti generano più domande — parcheggi, materiale, ritiro pettorale. Queste informazioni ti dicono dove la comunicazione è carente e dove intervenire.</p>
-              </div>
-              <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center text-xl">🔄</div>
-                  <div>
-                    <div className="font-bold text-sm text-gray-900">Loop di miglioramento continuo</div>
-                    <div className="text-xs text-gray-400">Ogni edizione è più efficiente</div>
-                  </div>
-                </div>
-                <p className="text-gray-500 text-sm leading-relaxed">Analisi → insight → aggiornamento del regolamento → meno domande → meno ticket. Con Repliq, la comunicazione della tua gara migliora automaticamente ad ogni edizione.</p>
-              </div>
-            </div>
-
-            {/* Dashboard mockup analytics */}
-            <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
-              <div className="bg-gradient-to-r from-gray-900 to-gray-800 px-5 py-4 flex items-center gap-3">
-                <div className="flex gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-red-400"/>
-                  <div className="w-3 h-3 rounded-full bg-yellow-400"/>
-                  <div className="w-3 h-3 rounded-full bg-green-400"/>
-                </div>
-                <span className="text-gray-400 text-xs font-medium ml-2">Repliq Analytics — Tenno Trail 2026</span>
-              </div>
-              <div className="p-5">
-                <div className="grid grid-cols-3 gap-3 mb-5">
-                  {[
-                    {label:"Domande totali", value:"847", color:"text-blue-600"},
-                    {label:"Risposta auto.", value:"94%", color:"text-green-600"},
-                    {label:"Ticket aperti", value:"3", color:"text-amber-600"},
-                  ].map((s,i)=>(
-                    <div key={i} className="bg-gray-50 rounded-xl p-3 text-center">
-                      <div className={`text-xl font-extrabold ${s.color}`}>{s.value}</div>
-                      <div className="text-xs text-gray-400 mt-0.5">{s.label}</div>
-                    </div>
-                  ))}
-                </div>
-                <div className="mb-4">
-                  <div className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Domande più frequenti</div>
-                  {[
-                    {q:"Dove parcheggio?", n:142, pct:85},
-                    {q:"Orario partenza?", n:98, pct:60},
-                    {q:"Materiale obbligatorio?", n:87, pct:52},
-                    {q:"Dove ritiro il pettorale?", n:71, pct:43},
-                  ].map((item,i)=>(
-                    <div key={i} className="mb-2">
-                      <div className="flex justify-between text-xs mb-1">
-                        <span className="text-gray-700 font-medium">{item.q}</span>
-                        <span className="text-gray-400">{item.n}x</span>
-                      </div>
-                      <div className="h-1.5 bg-gray-100 rounded-full">
-                        <div className="h-1.5 bg-blue-500 rounded-full" style={{width:`${item.pct}%`}}/>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div>
-                  <div className="text-xs font-bold text-red-500 uppercase tracking-wider mb-2">⚠️ Lacune da colmare</div>
-                  {["Come si fa il rimborso iscrizione?", "C&apos;è assistenza medica sul percorso?"].map((q,i)=>(
-                    <div key={i} className="flex items-center gap-2 text-xs text-gray-600 bg-red-50 rounded-lg px-3 py-2 mb-1.5">
-                      <span className="text-red-400">●</span> {q}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* FUNZIONALITÀ */}
       <section id="funzionalita" className="py-24 px-6 bg-gray-50">
         <div className="max-w-5xl mx-auto">
@@ -667,7 +569,7 @@ export default function LandingPage() {
           <div className="text-center mb-16">
             <p className="text-blue-600 font-bold text-sm uppercase tracking-widest mb-3">Analytics</p>
             <h2 className="text-4xl font-extrabold tracking-tight mb-4">Capisci cosa non funziona.<br /><span className="text-blue-600">Prima della gara.</span></h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">La dashboard ti mostra in tempo reale quante domande riceve il chatbot, quali argomenti preoccupano di più i partecipanti e dove il tuo regolamento ha lacune da colmare.</p>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">La dashboard ti mostra quante domande riceve il chatbot, quali sono le più frequenti e — soprattutto — distingue tra <strong className="text-gray-700">lacune reali nel regolamento</strong> e <strong className="text-gray-700">domande frequenti</strong> che i partecipanti fanno comunque. Due problemi diversi, due soluzioni diverse.</p>
           </div>
           {/* Mockup dashboard stats */}
           <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden max-w-3xl mx-auto">
@@ -712,24 +614,32 @@ export default function LandingPage() {
                     </div>
                   ))}
                 </div>
-                {/* Lacune */}
+                {/* Insights domande */}
                 <div>
-                  <div className="text-xs font-bold text-red-500 uppercase tracking-wider mb-3">⚠️ Lacune da colmare</div>
+                  <div className="text-xs font-bold text-violet-600 uppercase tracking-wider mb-3">🧠 Cosa vogliono sapere</div>
                   <div className="flex flex-col gap-2 mb-4">
                     {[
-                      "Come si fa il rimborso iscrizione?",
-                      "C'è assistenza medica al km 20?",
-                      "Posso cambiare categoria?",
-                      "Dove posso lasciare la bici?",
-                    ].map((q,i)=>(
-                      <div key={i} className="flex items-center gap-2 text-xs text-gray-700 bg-red-50 border border-red-100 rounded-lg px-3 py-2">
-                        <span className="text-red-400 font-bold">●</span> {q}
+                      {q:"Come si fa il rimborso iscrizione?", type:"gap", label:"Non nel reg."},
+                      {q:"C'è assistenza medica al km 20?", type:"gap", label:"Non nel reg."},
+                      {q:"Posso cambiare categoria?", type:"question", label:"Domanda freq."},
+                      {q:"Dove posso lasciare la bici?", type:"question", label:"Domanda freq."},
+                    ].map((item,i)=>(
+                      <div key={i} className={`flex items-center justify-between text-xs rounded-lg px-3 py-2 border ${item.type === 'gap' ? 'bg-red-50 border-red-100 text-gray-700' : 'bg-violet-50 border-violet-100 text-gray-700'}`}>
+                        <span>{item.q}</span>
+                        <span className={`font-bold ml-2 whitespace-nowrap ${item.type === 'gap' ? 'text-red-500' : 'text-violet-500'}`}>{item.label}</span>
                       </div>
                     ))}
                   </div>
+                  <div className="bg-blue-50 border border-blue-100 rounded-xl p-3 mb-2">
+                    <div className="text-xs font-bold text-blue-700 mb-1">💡 Repliq distingue due casi</div>
+                    <div className="text-xs text-blue-600 leading-relaxed space-y-1">
+                      <div><span className="text-red-500 font-bold">● Lacuna</span> — domanda senza risposta nel regolamento → aggiungila</div>
+                      <div><span className="text-violet-500 font-bold">● Domanda frequente</span> — risposta c&apos;è ma i partecipanti chiedono comunque → mettila in evidenza</div>
+                    </div>
+                  </div>
                   <div className="bg-green-50 border border-green-100 rounded-xl p-3">
-                    <div className="text-xs font-bold text-green-700 mb-1">💡 Suggerimento Repliq</div>
-                    <div className="text-xs text-green-600 leading-relaxed">Aggiungi una sezione rimborsi al regolamento — è la domanda senza risposta più frequente (23 ticket in 7 giorni).</div>
+                    <div className="text-xs font-bold text-green-700 mb-1">✅ Risultato</div>
+                    <div className="text-xs text-green-600 leading-relaxed">Ogni edizione il chatbot risponde a più domande in autonomia. Meno ticket, meno WhatsApp, organizzazione più fluida.</div>
                   </div>
                 </div>
               </div>
