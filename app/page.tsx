@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 // Animation variants
 const fadeInUp = {
   hidden: { opacity: 0, y: 32 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
 };
 const fadeIn = {
   hidden: { opacity: 0 },
@@ -180,8 +180,9 @@ export default function LandingPage() {
 
           {/* Floating product mockup */}
           <motion.div
-            variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.3 } } }}
+            variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut", delay: 0.3 } } }}
             className="relative animate-float max-w-3xl mx-auto"
+            style={{ willChange: "opacity, transform" }}
           >
             <div className="absolute -inset-4 bg-gradient-to-b from-blue-100/50 to-transparent rounded-3xl blur-xl pointer-events-none" />
             {/* Browser chrome */}
