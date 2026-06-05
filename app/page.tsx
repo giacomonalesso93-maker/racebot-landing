@@ -1,25 +1,25 @@
 "use client";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 // Animation variants
-const fadeInUp = {
+const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 32 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } as object },
 };
-const fadeIn = {
+const fadeIn: Variants = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 0.5 } },
+  visible: { opacity: 1, transition: { duration: 0.5 } as object },
 };
-const stagger = {
+const stagger: Variants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
+  visible: { transition: { staggerChildren: 0.1 } as object },
 };
-const staggerFast = {
+const staggerFast: Variants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.07 } },
+  visible: { transition: { staggerChildren: 0.07 } as object },
 };
-const vp = { once: true, margin: "-60px" };
+const vp = { once: true, margin: "-60px" } as const;
 
 const CHAT_MESSAGES = [
   { from: "user", text: "A che ora parte la gara?" },
@@ -180,7 +180,7 @@ export default function LandingPage() {
 
           {/* Floating product mockup */}
           <motion.div
-            variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut", delay: 0.3 } } }}
+            variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7, delay: 0.3 } as object } }}
             className="relative animate-float max-w-3xl mx-auto"
             style={{ willChange: "opacity, transform" }}
           >
