@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, type Variants } from "framer-motion";
 
 // ---------------------------------------------------------------------------
@@ -103,6 +103,13 @@ export default function LandingPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<TabId>("overview");
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setShowScrollTop(window.scrollY > 400);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <main className="bg-white text-slate-900 font-sans overflow-x-hidden">
@@ -199,32 +206,32 @@ export default function LandingPage() {
                   <div><div className="font-bold text-slate-800 text-sm">Ciao Giacomo 👋</div><div className="text-xs text-slate-400">3 gare attive questa stagione</div></div>
                   <button className="bg-blue-600 text-white text-xs px-3 py-1.5 rounded-lg font-semibold">+ Nuova gara</button>
                 </div>
-                <div className="grid grid-cols-4 gap-3 mb-5">
+                <div className="grid grid-cols-2 gap-2 mb-4">
                   {[
                     { v: "847", l: "Domande totali", c: "text-blue-600", bg: "bg-blue-50" },
                     { v: "94%", l: "Risposte auto.", c: "text-emerald-600", bg: "bg-emerald-50" },
                     { v: "52", l: "Ticket aperti", c: "text-amber-600", bg: "bg-amber-50" },
                     { v: "0", l: "Messaggi persi", c: "text-violet-600", bg: "bg-violet-50" },
                   ].map((s, i) => (
-                    <div key={i} className={`${s.bg} rounded-xl p-3`}>
-                      <div className={`text-xl font-extrabold ${s.c}`}>{s.v}</div>
+                    <div key={i} className={`${s.bg} rounded-xl p-2.5`}>
+                      <div className={`text-lg font-extrabold ${s.c}`}>{s.v}</div>
                       <div className="text-xs text-slate-500 mt-0.5 leading-tight">{s.l}</div>
                     </div>
                   ))}
                 </div>
-                <div className="grid grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 gap-2">
                   {[
                     { name: "Trail del Bosco Sacro", date: "15 Jun", questions: 234, active: true, icon: "🏔️" },
                     { name: "Tenno Trail 30km", date: "22 Jun", questions: 156, active: true, icon: "🚴" },
                     { name: "Granfondo Dolomiti", date: "8 Jul", questions: 89, active: false, icon: "⛵" },
                   ].map((r, i) => (
-                    <div key={i} className="bg-white rounded-xl p-3 border border-slate-100 shadow-sm">
-                      <div className="flex items-start justify-between mb-2">
-                        <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-base">{r.icon}</div>
-                        <span className={`text-xs px-2 py-0.5 rounded-full font-semibold ${r.active ? "bg-emerald-100 text-emerald-700" : "bg-slate-100 text-slate-500"}`}>{r.active ? "Attivo" : "Presto"}</span>
+                    <div key={i} className="bg-white rounded-xl p-2.5 border border-slate-100 shadow-sm flex items-center gap-2">
+                      <div className="w-7 h-7 bg-blue-100 rounded-lg flex items-center justify-center text-sm flex-shrink-0">{r.icon}</div>
+                      <div className="flex-1 min-w-0">
+                        <div className="font-semibold text-slate-800 text-xs leading-tight truncate">{r.name}</div>
+                        <div className="text-xs text-slate-400">{r.date} · {r.questions} dom.</div>
                       </div>
-                      <div className="font-semibold text-slate-800 text-xs leading-tight mb-1">{r.name}</div>
-                      <div className="text-xs text-slate-400">{r.date} · {r.questions} domande</div>
+                      <span className={`text-xs px-1.5 py-0.5 rounded-full font-semibold flex-shrink-0 ${r.active ? "bg-emerald-100 text-emerald-700" : "bg-slate-100 text-slate-500"}`}>{r.active ? "✓" : "…"}</span>
                     </div>
                   ))}
                 </div>
@@ -439,8 +446,9 @@ export default function LandingPage() {
           <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={vp} className="bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden">
             <div className="bg-slate-900 px-5 py-3 flex items-center justify-between">
               <div className="flex gap-1.5"><div className="w-3 h-3 rounded-full bg-red-400"/><div className="w-3 h-3 rounded-full bg-yellow-400"/><div className="w-3 h-3 rounded-full bg-emerald-400"/></div>
-              <span className="text-slate-400 text-xs font-medium">app.repliq.it/dashboard — Tenno Trail 2026</span>
-              <span className="bg-amber-400 text-amber-900 text-xs font-bold px-2 py-0.5 rounded-full">🔍 Anteprima</span>
+              <span className="text-slate-400 text-xs font-medium hidden sm:inline">app.repliq.it/dashboard — Tenno Trail 2026</span>
+              <span className="text-slate-400 text-xs font-medium sm:hidden">Tenno Trail 2026</span>
+              <span className="bg-amber-400 text-amber-900 text-xs font-bold px-2 py-0.5 rounded-full whitespace-nowrap">🔍 Anteprima</span>
             </div>
             {/* Tabs */}
             <div className="border-b border-slate-100 px-6 flex gap-6 overflow-x-auto">
@@ -947,6 +955,20 @@ export default function LandingPage() {
           <p className="text-slate-400 text-sm">© 2026 Repliq · <a href="/privacy" className="hover:text-blue-500 transition-colors">Privacy</a> · <a href="/termini" className="hover:text-blue-500 transition-colors">Termini</a></p>
         </div>
       </footer>
+
+      {/* ── SCROLL TO TOP ───────────────────────────────────────────────── */}
+      <motion.button
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        aria-label="Torna su"
+        className="fixed bottom-6 right-6 z-50 w-11 h-11 bg-blue-600 text-white rounded-full shadow-lg shadow-blue-200 flex items-center justify-center hover:bg-blue-700 transition-colors"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: showScrollTop ? 1 : 0, scale: showScrollTop ? 1 : 0.8, pointerEvents: showScrollTop ? "auto" : "none" }}
+        transition={{ duration: 0.2 }}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
+        </svg>
+      </motion.button>
 
     </main>
   );
