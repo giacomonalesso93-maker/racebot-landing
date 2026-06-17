@@ -117,7 +117,7 @@ export default function LandingPage() {
       {/* ── NAV ─────────────────────────────────────────────────────────── */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-100">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <a href="/"><span className="text-2xl font-black tracking-tight text-blue-600">Repliq</span></a>
+          <a href="/"><span style={{ fontFamily: "var(--font-plus-jakarta, sans-serif)" }} className="text-2xl font-extrabold tracking-tight bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">Repliq</span></a>
           <div className="hidden md:flex items-center gap-8 text-sm text-slate-500 font-medium">
             <a href="#come-funziona" className="hover:text-slate-900 transition-colors">Come funziona</a>
             <a href="#funzionalita" className="hover:text-slate-900 transition-colors">Funzionalità</a>
@@ -758,7 +758,7 @@ export default function LandingPage() {
       <footer className="py-12 px-6 border-t border-slate-100 bg-white">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex flex-col items-center md:items-start gap-2">
-            <span className="text-xl font-black text-blue-600 tracking-tight">Repliq</span>
+            <span style={{ fontFamily: "var(--font-plus-jakarta, sans-serif)" }} className="text-xl font-extrabold tracking-tight bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">Repliq</span>
             <p className="text-slate-400 text-sm">Il chatbot AI per organizzatori di eventi sportivi</p>
           </div>
           <div className="flex items-center gap-8 text-sm text-slate-400">
