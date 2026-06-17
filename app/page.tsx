@@ -766,7 +766,7 @@ export default function LandingPage() {
             <a href="/pricing" className="hover:text-blue-600 transition-colors">Prezzi</a>
             <a href="#faq" className="hover:text-blue-600 transition-colors">FAQ</a>
           </div>
-          <p className="text-slate-400 text-sm">© 2026 Repliq · <a href="/privacy" className="hover:text-blue-500 transition-colors">Privacy</a> · <a href="/termini" className="hover:text-blue-500 transition-colors">Termini</a></p>
+          <p className="text-slate-400 text-sm">© 2026 Repliq · <a href="mailto:info@repliq.it" className="hover:text-blue-500 transition-colors">info@repliq.it</a> · <a href="/privacy" className="hover:text-blue-500 transition-colors">Privacy</a> · <a href="/termini" className="hover:text-blue-500 transition-colors">Termini</a></p>
         </div>
       </footer>
 
