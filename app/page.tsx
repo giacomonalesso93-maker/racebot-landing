@@ -710,7 +710,7 @@ export default function LandingPage() {
             Repliq è appena nato. Stiamo selezionando i primi <strong className="text-slate-900">10 organizzatori in Italia</strong> che vogliono provarlo gratis sulla prossima gara, in cambio di un feedback onesto.
           </p>
           <p className="text-slate-500 mb-10 leading-relaxed">Se organizzi una gara di trail, corsa, ciclismo o triathlon, scrivici. Non promettiamo la luna — promettiamo di lavorare insieme per rendere la tua gara più fluida.</p>
-          <a href="mailto:giacomonalesso93@gmail.com?subject=Early tester Repliq" className="inline-block bg-blue-600 text-white px-8 py-4 rounded-full font-bold text-base hover:bg-blue-700 transition-colors shadow-lg shadow-blue-200">Candidati come early tester →</a>
+          <a href="mailto:info@repliq.it?subject=Early tester Repliq" className="inline-block bg-blue-600 text-white px-8 py-4 rounded-full font-bold text-base hover:bg-blue-700 transition-colors shadow-lg shadow-blue-200">Candidati come early tester →</a>
           <p className="text-slate-400 text-sm mt-4">Nessun impegno. Solo una gara di test e il tuo feedback onesto.</p>
         </motion.div>
       </section>
